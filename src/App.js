@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import fetchAllClothes from "./store/thunks/fetchAllClothes";
+
+import Navbar from "./Components/Navbar/Navbar";
+import Homepage from "./Pages/Homepage/Homepage";
+import Shop from "./Pages/Shop/Shop";
+import Contacts from "./Pages/Contacts/Contacts";
+
+import "./App.css";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllClothes());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route element={<Homepage />} exatct path="/" />
+          <Route element={<Shop />} path="/shop" />
+          <Route element={<Contacts />} path="/contacts" />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

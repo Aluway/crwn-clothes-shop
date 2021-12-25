@@ -1,0 +1,54 @@
+$white: #ffffff;
+
+.navbar__container {
+  background-color: black;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  .navbar__options_container {
+    background-color: black;
+    height: 100%;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    font-size: 20px;
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+
+    .navbar__option {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1em;
+        background-color: $white;
+        opacity: 1;
+        transform: translate3d(-102%, 0, 0);
+        transition: opacity 300ms, transform 300ms;
+      }
+      &:hover::after,
+      &:focus::after {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+.navbar__cart_container {
+  width: 30px;
+  list-style-type: none;
+  cursor: pointer;
+}
