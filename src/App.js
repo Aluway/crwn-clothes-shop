@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Homepage from "./Pages/Homepage/Homepage";
 import Shop from "./Pages/Shop/Shop";
 import Contacts from "./Pages/Contacts/Contacts";
+import Catalog from "./Pages/Catalog/Catalog";
 
 import "./App.css";
 
@@ -23,9 +24,10 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route element={<Homepage />} exatct path="/" />
+          <Route element={<Homepage />} exact path="/" />
           <Route element={<Shop />} path="/shop" />
           <Route element={<Contacts />} path="/contacts" />
+          <Route element={<Catalog />} path="/shop/:directoryName" />
         </Routes>
       </div>
     </BrowserRouter>

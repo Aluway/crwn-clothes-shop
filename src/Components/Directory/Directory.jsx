@@ -9,13 +9,13 @@ function Directory(props) {
   const directories = useSelector((state) => state.clothes);
 
   const mainDirectory = directories.filter(
-    (item) => item.title === "Womens" || item.title === "Mens"
+    (item) => item.title === "womens" || item.title === "mens"
   );
   const womensDirectory = mainDirectory[0];
   const mensDirectory = mainDirectory[1];
 
   const accessoriesDirectory = directories.filter(
-    (item) => item.title !== "Womens" && item.title !== "Mens"
+    (item) => item.title !== "womens" && item.title !== "mens"
   );
   const jacketsDirectory = accessoriesDirectory[0];
   const hatsDirectory = accessoriesDirectory[1];

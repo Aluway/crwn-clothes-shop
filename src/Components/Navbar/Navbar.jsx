@@ -16,9 +16,6 @@ function Navbar(props) {
         <Logo className="navbar__logo" />
       </NavLink>
       <ul className="navbar__options_container">
-        <NavLink to="/shop" className="navbar__option">
-          SHOP
-        </NavLink>
         <NavLink to="/contacts" className="navbar__option">
           CONTACTS
         </NavLink>

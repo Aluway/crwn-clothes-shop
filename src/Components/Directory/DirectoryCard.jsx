@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./DirectoryCard.scss";
 
 function DirectoryCard({ img, title, ...props }) {
+  // const directoryName = title;
   return (
     <div className={`directory__card__container ${props.additionalClass}`}>
       <div
@@ -12,7 +14,9 @@ function DirectoryCard({ img, title, ...props }) {
         className="card__background"
       >
         <div className="card__button">
-          <div className="button__title">{title}</div>
+          <Link to={`/shop/${title}`} className="button__title">
+            {title}
+          </Link>
         </div>
       </div>
     </div>
