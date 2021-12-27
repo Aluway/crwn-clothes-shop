@@ -1,23 +1,35 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./DirectoryCard.scss";
 
 function DirectoryCard({ img, title, ...props }) {
-  // const directoryName = title;
+  const [active, setActive] = useState(false);
+  const toggleActive = () => {
+    setActive(!active);
+  };
   return (
-    <div className={`directory__card__container ${props.additionalClass}`}>
+    <div
+      className={`directory__card__container ${props.additionalClass} ${
+        active ? "active" : ""
+      }`}
+    >
       <div
         style={{
           backgroundImage: `url(${img})`,
         }}
         className="card__background"
       >
-        <div className="card__button">
-          <Link to={`/shop/${title}`} className="button__title">
+        <Link
+          onMouseEnter={toggleActive}
+          onMouseLeave={toggleActive}
+          to={`/shop/${title}`}
+          className="card__button"
+        >
+          <div to={`/shop/${title}`} className="button__title">
             {title}
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );

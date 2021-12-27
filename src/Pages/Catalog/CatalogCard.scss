@@ -1,7 +1,11 @@
 .catalog__card_container {
+  position: relative;
   height: 400px;
   width: 300px;
   margin-bottom: 70px;
+  &:hover .catalog__button_wrapper {
+    opacity: 1;
+  }
   .price__container {
     display: flex;
     justify-content: space-between;
@@ -17,5 +21,9 @@
     background-size: cover;
     background-position: center;
     border: 2px solid black;
+  }
+  .catalog__button_wrapper {
+    opacity: 0;
+    transition: opacity 300ms;
   }
 }

@@ -8,7 +8,18 @@ $white: #ffffff;
 
 .directory__card_left {
   flex-basis: 50%;
+  &.active {
+    flex-basis: 100%;
+  }
+  .card__button {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 250px;
+    clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+  }
   &:after {
+    z-index: 2;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -17,16 +28,23 @@ $white: #ffffff;
     height: 0;
     border-bottom: 500px solid #191919;
     border-left: 50px solid transparent;
-  }
-  &:hover {
-    z-index: 2;
-    flex-basis: 100%;
   }
 }
 
 .directory__card_right {
   flex-basis: 50%;
+  &.active {
+    flex-basis: 100%;
+  }
+  .card__button {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 250px;
+    clip-path: polygon(3% 0, 100% 0, 100% 100%, 0 100%);
+  }
   &:before {
+    z-index: 2;
     position: absolute;
     top: 0;
     left: 0;
@@ -35,16 +53,23 @@ $white: #ffffff;
     height: 0;
     border-top: 500px solid #191919;
     border-right: 50px solid transparent;
-  }
-  &:hover {
-    z-index: 2;
-    flex-basis: 100%;
   }
 }
 
 .accessories__card_first {
   flex-basis: 33%;
+  &.active {
+    flex-basis: 50%;
+  }
+  .card__button {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 200px;
+    clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+  }
   &:after {
+    z-index: 2;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -54,15 +79,23 @@ $white: #ffffff;
     border-bottom: 500px solid #191919;
     border-left: 50px solid transparent;
   }
-  &:hover {
-    z-index: 2;
-    flex-basis: 50%;
-  }
 }
 
 .accessories__card_second {
+  overflow: hidden;
   flex-basis: 34%;
+  &.active {
+    flex-basis: 50%;
+  }
+  .card__button {
+    position: absolute;
+    bottom: 10%;
+    left: -19px;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+  }
   &:before {
+    z-index: 2;
     position: absolute;
     top: 0;
     left: 0;
@@ -81,15 +114,21 @@ $white: #ffffff;
     height: 0;
     border-bottom: 500px solid #191919;
     border-left: 50px solid transparent;
-  }
-  &:hover {
-    z-index: 2;
-    flex-basis: 50%;
   }
 }
 
 .accessories__card_third {
   flex-basis: 33%;
+  &.active {
+    flex-basis: 50%;
+  }
+  .card__button {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 200px;
+    clip-path: polygon(3% 0, 100% 0, 100% 100%, 0 100%);
+  }
   &:before {
     position: absolute;
     top: 0;
@@ -99,10 +138,6 @@ $white: #ffffff;
     height: 0;
     border-top: 500px solid #191919;
     border-right: 50px solid transparent;
-  }
-  &:hover {
-    z-index: 2;
-    flex-basis: 50%;
   }
 }
 
@@ -115,16 +150,11 @@ $white: #ffffff;
 
 .card__button {
   height: 50px;
-  width: 90px;
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
-  background-color: #191919;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  text-decoration: none;
   &:hover .button__title:after,
   &:focus .button__title:after {
     opacity: 1;
@@ -148,7 +178,7 @@ $white: #ffffff;
     height: 0.1em;
     background-color: $white;
     opacity: 1;
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-101%, 0, 0);
     transition: opacity 300ms, transform 300ms;
   }
 }

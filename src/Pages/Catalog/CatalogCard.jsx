@@ -1,4 +1,5 @@
 import React from "react";
+import CutstomButton from "../../Components/Button/CustomButton";
 
 import "./CatalogCard.scss";
 
@@ -13,6 +14,11 @@ function CatalogCard(props) {
         className="card__background"
         style={{ backgroundImage: `url(${props.imgUrl})` }}
       />
+      <div className="catalog__button_wrapper">
+        <CutstomButton buttonClassname={"catalog__button"} type={"button"}>
+          Add to cart
+        </CutstomButton>
+      </div>
     </div>
   );
 }
