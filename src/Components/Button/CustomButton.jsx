@@ -6,7 +6,7 @@ function CutstomButton(props) {
   return (
     <button
       type={props.buttonType}
-      onClick={props.hadnleClick}
+      onClick={props.handleClick}
       className={`button ${props.buttonClassname}`}
     >
       {props.children}

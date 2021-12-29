@@ -1,0 +1,38 @@
+.cart__item_wrapper {
+  font-size: 20px;
+  margin-bottom: 10px;
+  height: 80px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .cart__img_wrapper {
+    display: inline-block;
+    height: 80px;
+    width: 60px;
+    padding-right: 20px;
+    .cart__img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .item__name {
+    display: inline-block;
+    width: 130px;
+  }
+  .item__qtty {
+    display: inline-block;
+    width: 70px;
+  }
+  .item__cross {
+    height: 25%;
+    cursor: pointer;
+    justify-self: flex-end;
+    &:hover {
+      fill: white;
+    }
+  }
+}

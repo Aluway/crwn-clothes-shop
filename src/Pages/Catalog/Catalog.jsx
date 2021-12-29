@@ -6,9 +6,12 @@ import "./Catalog.scss";
 import CatalogCard from "./CatalogCard";
 
 function DirectoryCatalog(props) {
+  const cart = useSelector((state) => state.cart);
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+    console.log(cart);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const params = useParams();
   const catalogTitle = params.directoryName;
@@ -22,7 +25,6 @@ function DirectoryCatalog(props) {
 
   return (
     <div>
-      {console.log(catalog.items)}
       <div className="title__wrapper">
         <div className="title__left"></div>
         <div className="catalog__title">{catalogTitle}</div>
@@ -31,6 +33,7 @@ function DirectoryCatalog(props) {
       <div className="catalog__container">
         {catalog.items.map((item) => (
           <CatalogCard
+            id={item.id}
             key={item.id}
             name={item.name}
             imgUrl={item.imageUrl}

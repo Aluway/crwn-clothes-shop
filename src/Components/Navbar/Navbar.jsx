@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-import { ReactComponent as Cart } from "../../assets/shopping-bag.svg";
+import { ReactComponent as CartLogo } from "../../assets/shopping-bag.svg";
 
 import { NavLink } from "react-router-dom";
+
+import Cart from "../Cart/Cart";
 
 import "./Navbar.scss";
 
 function Navbar(props) {
   const [isSignedIn, setIsSignedIt] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   return (
     <div className="navbar__container">
@@ -34,10 +37,14 @@ function Navbar(props) {
             SIGN IN
           </li>
         )}
-        <div className="navbar__cart_container">
-          <Cart className="navbar__cart" />
+        <div
+          onClick={() => setShowCart(!showCart)}
+          className="navbar__cart_container"
+        >
+          <CartLogo className="navbar__cart" />
         </div>
       </ul>
+      {showCart && <Cart />}
     </div>
   );
 }
