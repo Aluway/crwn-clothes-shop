@@ -10,7 +10,6 @@
   height: 320px;
   border: 1px solid black;
   background-color: #191919;
-  animation: openCart 500ms forwards;
   overflow: hidden;
 
   .cart__items__wrapper {
@@ -42,16 +41,5 @@
     text-transform: uppercase;
     width: 90%;
     margin: 0 auto;
-  }
-}
-
-@keyframes openCart {
-  from {
-    opacity: 0;
-    height: 60px;
-  }
-  to {
-    opacity: 1;
-    height: 320px;
   }
 }

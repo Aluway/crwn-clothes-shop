@@ -9,7 +9,7 @@ import CustomButton from "../Button/CustomButton";
 function Cart(props) {
   const cartItems = useSelector((state) => state.cart);
   return (
-    <div className="cart__container ">
+    <div style={props.style} className="cart__container">
       <div className="cart__items__wrapper">
         {cartItems.length === 0 ? (
           <div className="cart__empty">Your cart is empty</div>

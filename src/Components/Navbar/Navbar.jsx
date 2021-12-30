@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTransition, animated } from "react-spring";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { ReactComponent as CartLogo } from "../../assets/shopping-bag.svg";
@@ -12,6 +13,14 @@ import "./Navbar.scss";
 function Navbar(props) {
   const [isSignedIn, setIsSignedIt] = useState(false);
   const [showCart, setShowCart] = useState(false);
+
+  const AnimatedCart = animated(Cart);
+  const transition = useTransition(showCart, {
+    config: { duration: 250 },
+    from: { opacity: 0, height: 60 },
+    enter: { opacity: 1, height: 320 },
+    leave: { opacity: 0, height: 60 },
+  });
 
   return (
     <div className="navbar__container">
@@ -44,7 +53,9 @@ function Navbar(props) {
           <CartLogo className="navbar__cart" />
         </div>
       </ul>
-      {showCart && <Cart />}
+      {transition((style, item) => {
+        return item ? <AnimatedCart style={style} /> : "";
+      })}
     </div>
   );
 }
