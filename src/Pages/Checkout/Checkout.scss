@@ -1,0 +1,14 @@
+.checkout__container {
+  margin: 40px auto;
+  width: 70%;
+  color: #ffffff;
+  font-size: 25px;
+  .checkout__header {
+    display: grid;
+    grid-template-columns: 350px 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    height: 50px;
+    border-bottom: 1px solid white;
+  }
+}

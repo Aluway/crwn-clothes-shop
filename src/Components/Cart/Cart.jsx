@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import "./Cart.scss";
 
@@ -8,6 +9,9 @@ import CustomButton from "../Button/CustomButton";
 
 function Cart(props) {
   const cartItems = useSelector((state) => state.cart);
+
+  const navigate = useNavigate();
+
   return (
     <div style={props.style} className="cart__container">
       <div className="cart__items__wrapper">
@@ -28,7 +32,11 @@ function Cart(props) {
           })
         )}
       </div>
-      <CustomButton type={"button"} buttonClassname={"cart__button"}>
+      <CustomButton
+        type={"button"}
+        buttonClassname={"cart__button"}
+        handleClick={() => navigate("/checkout")}
+      >
         Checkout
       </CustomButton>
     </div>

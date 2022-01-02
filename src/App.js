@@ -10,7 +10,8 @@ import Shop from "./Pages/Shop/Shop";
 import Contacts from "./Pages/Contacts/Contacts";
 import Catalog from "./Pages/Catalog/Catalog";
 
-import "./App.css";
+import "./App.scss";
+import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function App() {
           <Route element={<Shop />} path="/shop" />
           <Route element={<Contacts />} path="/contacts" />
           <Route element={<Catalog />} path="/shop/:directoryName" />
+          <Route element={<Checkout />} exact path="/checkout" />
         </Routes>
       </div>
     </BrowserRouter>

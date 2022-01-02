@@ -4,13 +4,17 @@
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   height: 40px;
+  cursor: pointer;
+  transition: background-color 300ms;
 }
 
 .catalog__button {
-  cursor: pointer;
   padding: 0;
   left: 10%;
   bottom: 0;
   position: absolute;
   width: 80%;
+  &:hover {
+    background-color: black;
+  }
 }

@@ -1,0 +1,36 @@
+.checkout__item__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 200px 1fr 1fr 1fr;
+  grid-template-rows: 180px;
+  align-items: center;
+  justify-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff;
+  .item__img {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+  }
+  .item__qty__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .arrow__right,
+  .arrow__left,
+  .item__remove {
+    cursor: pointer;
+    fill: white;
+    opacity: 0.3;
+    transition: opacity 300ms;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .item__remove {
+    height: 30px;
+  }
+}
