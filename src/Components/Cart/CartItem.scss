@@ -29,10 +29,13 @@
   }
   .item__cross {
     height: 25%;
+    fill: white;
     cursor: pointer;
     justify-self: flex-end;
+    opacity: 0.3;
+    transition: opacity 300ms;
     &:hover {
-      fill: white;
+      opacity: 1;
     }
   }
 }

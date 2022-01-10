@@ -13,12 +13,21 @@
     height: 100%;
     width: 100%;
   }
+  .item__name,
+  .item__price,
+  .item__qty {
+    user-select: none;
+  }
+  .item__name {
+    text-align: center;
+  }
   .item__qty__wrapper {
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-evenly;
   }
+
   .arrow__right,
   .arrow__left,
   .item__remove {

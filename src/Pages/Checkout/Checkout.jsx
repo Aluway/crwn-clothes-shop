@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import CheckoutItem from "./CheckoutItem";
@@ -6,6 +7,12 @@ import "./Checkout.scss";
 
 function Checkout(props) {
   const cartItems = useSelector((state) => state.cart);
+
+  const totalPrice = useMemo(() => {
+    return cartItems.reduce((amount, item) => {
+      return amount + item.price * item.qty;
+    }, 0);
+  }, [cartItems]);
 
   return (
     <div className="checkout__container">
@@ -32,6 +39,16 @@ function Checkout(props) {
             );
           })
         )}
+      </div>
+      <div className="checkout__footer">
+        <div className="footer__total_wrapper">
+          <div className="footer__total">TOTAL:</div>
+          <div className="footer__price">{totalPrice} $</div>
+        </div>
+        <div className="footer__button">
+          Payment button to be added once Stripe is implemented into this
+          project.
+        </div>
       </div>
     </div>
   );

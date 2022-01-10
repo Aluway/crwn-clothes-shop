@@ -11,4 +11,23 @@
     height: 50px;
     border-bottom: 1px solid white;
   }
+  .info__message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+    height: 60px;
+  }
+  .checkout__footer {
+    .footer__total_wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 30px;
+      font-size: 40px;
+    }
+    .footer__button {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
 }
