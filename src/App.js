@@ -12,6 +12,7 @@ import Catalog from "./Pages/Catalog/Catalog";
 
 import "./App.scss";
 import Checkout from "./Pages/Checkout/Checkout";
+import { YMaps } from "react-yandex-maps";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,16 +23,18 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route element={<Homepage />} exact path="/" />
-          <Route element={<Shop />} path="/shop" />
-          <Route element={<Contacts />} path="/contacts" />
-          <Route element={<Catalog />} path="/shop/:directoryName" />
-          <Route element={<Checkout />} exact path="/checkout" />
-        </Routes>
-      </div>
+      <YMaps preload>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route element={<Homepage />} exact path="/" />
+            <Route element={<Shop />} path="/shop" />
+            <Route element={<Contacts />} path="/contacts" />
+            <Route element={<Catalog />} path="/shop/:directoryName" />
+            <Route element={<Checkout />} exact path="/checkout" />
+          </Routes>
+        </div>
+      </YMaps>
     </BrowserRouter>
   );
 }
