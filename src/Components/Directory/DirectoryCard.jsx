@@ -5,9 +5,6 @@ import "./DirectoryCard.scss";
 
 function DirectoryCard({ img, title, ...props }) {
   const [active, setActive] = useState(false);
-  const toggleActive = () => {
-    setActive(!active);
-  };
   return (
     <div
       className={`directory__card__container ${props.additionalClass} ${
@@ -21,8 +18,8 @@ function DirectoryCard({ img, title, ...props }) {
         className="card__background"
       >
         <Link
-          onMouseEnter={toggleActive}
-          onMouseLeave={toggleActive}
+          onMouseEnter={() => setActive(true)}
+          onMouseLeave={() => setActive(false)}
           to={`/shop/${title}`}
           className="card__button"
         >

@@ -6,10 +6,8 @@ import "./Catalog.scss";
 import CatalogCard from "./CatalogCard";
 
 function DirectoryCatalog(props) {
-  const cart = useSelector((state) => state.cart);
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(cart);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

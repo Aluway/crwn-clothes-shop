@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useTransition, animated } from "react-spring";
+
+import { showModal } from "../../store/actions/signinAction";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { ReactComponent as CartLogo } from "../../assets/shopping-bag.svg";
@@ -9,9 +12,10 @@ import { NavLink } from "react-router-dom";
 import Cart from "../Cart/Cart";
 
 import "./Navbar.scss";
+import SigninModal from "../SigninModal/SigninModal";
 
 function Navbar(props) {
-  const [isSignedIn, setIsSignedIt] = useState(false);
+  const dispatch = useDispatch();
   const [showCart, setShowCart] = useState(false);
 
   const AnimatedCart = animated(Cart);
@@ -31,21 +35,12 @@ function Navbar(props) {
         <NavLink to="/contacts" className="navbar__option">
           CONTACTS
         </NavLink>
-        {isSignedIn ? (
-          <li
-            onClick={() => setIsSignedIt(!isSignedIn)}
-            className="navbar__option"
-          >
-            SIGN OUT
-          </li>
-        ) : (
-          <li
-            onClick={() => setIsSignedIt(!isSignedIn)}
-            className="navbar__option"
-          >
-            SIGN IN
-          </li>
-        )}
+        <li
+          onClick={() => dispatch(showModal(<SigninModal />))}
+          className="navbar__option"
+        >
+          SIGN IN
+        </li>
         <div
           onClick={() => setShowCart(!showCart)}
           className="navbar__cart_container"
